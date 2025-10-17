@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap');
+/* Variables CSS para tonos oscuros */
+:root {
+	--bg-primary: #000000; /* Fondo muy oscuro */
+	--bg-secondary: #f8e5e5; /* Fondo de secciones */
+	--text-color: #f0f0f0; /* Texto claro */
+	--accent-color: #c39ea0; /* Color de acento (azul oscuro) */
+	--link-hover: #fa255e; /* Fondos */
+}
+
+/* Base y Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+body {
+	font-size: 16px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background-color: var(--bg-primary);
+	color: var(--text-color);
+	line-height: 1.6;
+}
+
+img {
+	max-width: 40%;
+	height: auto;
+	display: block;
+}
+
+a {
+	color: var(--accent-color);
+	text-decoration: none;
+}
+
+/* --- Menú de Navegación (Responsive) --- */
+
+.navbar-secundary {
+	display: none; /* Ocultar el menú por defecto en móvil */
+}
+
+.navbar {
+	background-color: var(--bg-secondary);
+	color: var(--bg-primary);
+	padding: 0 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: sticky; /* Menú fijo al hacer scroll */
+	top: 0;
+	z-index: 1000;
+}
+
+.logo {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+}
+
+.nav-links li a {
+	color: var(--link-hover);
+	font-weight: bold;
+	padding: 0.5rem 1rem;
+	display: block;
+	transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+	color: var(--accent-color);
+}
+
+.burger {
+	display: none; /* Ocultar en escritorio */
+	background: none;
+	border: none;
+	color: var(--bg-primary);
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+/* --- Sección Parallax (Imagen Fija) --- */
+.hero-parallax {
+	background-image: url('/img/cover-removebg-preview.png');
+	min-height: 85vh;
+	background-attachment: fixed; /* Propiedad clave para el efecto fijo */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: white; /* Asegura que el texto sea legible sobre la imagen */
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-parallax h1 {
+	font-size: 3rem;
+	padding: 1rem;
+	background-color: rgba(
+		254,
+		155,
+		203,
+		0.5
+	); /* Fondo semitransparente para legibilidad */
+}
+
+/* --- Sección de Servicios (6 Imágenes) --- */
+.services-grid {
+	padding: 4rem 2rem;
+	text-align: center;
+	background-color: var(--bg-secondary);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.services-grid h2 {
+	margin-bottom: 2rem;
+	font-size: 2rem;
+	color: var(--link-hover);
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsivo */
+	gap: 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.service-item {
+	background-color: var(--bg-primary);
+	padding: 1rem;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	transition: transform 0.3s;
+}
+
+.service-item:hover {
+	transform: translateY(-10px);
+}
+.service-item img {
+	border-radius: 4px;
+	margin-bottom: 1rem;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.service-item p {
+	font-weight: bold;
+}
+
+/* --- Sección de Eslogan (Secundario) --- */
+.eslogan-section {
+	padding: 3rem 2rem;
+	text-align: center;
+	font-style: italic;
+	font-size: 1.5rem;
+	color: var(--text-color);
+	background-color: var(--bg-primary);
+}
+
+/* --- Pie de Página --- */
+.footer {
+	background-color: var(--bg-secondary);
+	color: var(--link-hover);
+	text-align: center;
+	padding: 1.5rem 2rem;
+	border-top: 1px solid var(--bg-primary);
+}
+
+.footer p {
+	margin-bottom: 10px;
+}
+
+.whatsapp-icon {
+	display: inline-flex;
+	align-items: center;
+	background-color: #25d366; /* Color de WhatsApp */
+	color: white;
+	padding: 0.5rem 1rem;
+	border-radius: 50px;
+	font-weight: bold;
+	margin-top: 10px;
+	transition: background-color 0.3s;
+}
+
+.whatsapp-icon:hover {
+	background-color: #128c7e;
+}
+
+.whatsapp-icon i {
+	margin-right: 8px;
+	font-size: 1.2rem;
+}
+
+/* --- Responsividad para el Menú (Punto de quiebre) --- */
+@media (max-width: 768px) {
+	.logo {
+		display: none; /* Ocultar el menú principal en móvil */
+	}
+
+	.nav-links {
+		display: none; /* Ocultar el menú por defecto en móvil */
+		flex-direction: column;
+		width: 100%;
+		position: absolute;
+		top: 65px; /* Altura de la navbar */
+		left: 0;
+		background-color: var(--bg-secondary);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	}
+
+	.nav-links.active {
+		display: flex; /* Mostrar cuando tenga la clase 'active' */
+	}
+
+	.nav-links li {
+		text-align: center;
+	}
+
+	.nav-links li a {
+		padding: 1rem;
+		border-top: 1px solid #2d2d2d;
+	}
+
+	.burger {
+		display: block; /* Mostrar el icono de hamburguesa */
+	}
+
+	.hero-parallax h1 {
+		font-size: 2rem;
+	}
+}

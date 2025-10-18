@@ -241,3 +241,77 @@ a {
 		font-size: 2rem;
 	}
 }
+
+/* --- Estilos para Páginas de Detalle de Servicio --- */
+.service-detail-container {
+	padding: 4rem 2rem;
+	max-width: 1200px; /* Ancho máximo similar al resto del contenido */
+	margin: 0 auto; /* Centrar el contenedor principal */
+	background-color: var(--bg-primary); /* Mantiene el fondo oscuro */
+	min-height: 70vh; /* Asegura que haya espacio */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.service-content {
+	display: flex;
+	flex-direction: row; /* Por defecto, lado a lado */
+	align-items: center; /* Centra verticalmente los elementos si tienen diferente altura */
+	gap: 2rem; /* Espacio entre la imagen y el texto */
+	width: 100%;
+	background-color: var(--bg-secondary);
+	border-radius: 10px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+	padding: 2rem;
+}
+
+.service-image-area,
+.service-info-area {
+	flex: 1; /* Ambos toman el mismo espacio disponible (50%) */
+	text-align: center; /* Centra el contenido dentro de cada área */
+}
+
+.service-image-area img {
+	max-width: 100%; /* Asegura que la imagen no se desborde */
+	height: auto;
+	border-radius: 8px;
+	margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+.service-title {
+	font-size: 2.2rem;
+	color: var(--accent-color);
+	margin-bottom: 1.5rem;
+}
+
+.service-description {
+	font-size: 1.1rem;
+	line-height: 1.8;
+	color: var(--bg-primary);
+	max-width: 600px; /* Limita el ancho del texto para mejor legibilidad */
+	margin: 0 auto; /* Centra el párrafo del texto */
+}
+
+/* --- Responsividad para el detalle del servicio --- */
+@media (max-width: 768px) {
+	.service-content {
+		flex-direction: column; /* Apila la imagen y el texto en pantallas pequeñas */
+		padding: 1.5rem;
+	}
+
+	.service-image-area,
+	.service-info-area {
+		flex: none; /* Elimina la proporción flex para que tomen ancho completo */
+		width: 100%;
+	}
+
+	.service-title {
+		font-size: 1.8rem;
+		margin-top: 1.5rem; /* Espacio entre imagen y título en móvil */
+	}
+
+	.service-description {
+		font-size: 1rem;
+	}
+}

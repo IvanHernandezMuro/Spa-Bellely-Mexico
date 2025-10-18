@@ -182,6 +182,11 @@ a {
 	margin-bottom: 10px;
 }
 
+.footer p span {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
 .whatsapp-icon {
 	display: inline-flex;
 	align-items: center;
@@ -307,7 +312,7 @@ a {
 	}
 
 	.service-title {
-		font-size: 1.8rem;
+		font-size: 1.4rem;
 		margin-top: 1.5rem; /* Espacio entre imagen y título en móvil */
 	}
 
